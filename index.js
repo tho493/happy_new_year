@@ -94,7 +94,6 @@ app.post("/api/v1/saveData", async (req, res) => {
         const result = await saveData(data);
 
         if (result.error !== 0) {
-            // Xóa ảnh nếu lỗi
             if (theme_id === '01' && imageToSave) {
                 console.log('Deleting image', imageToSave);
                 await deleteImage(imageToSave);
